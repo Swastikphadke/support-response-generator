@@ -20,7 +20,7 @@ Tick these off as you go, and commit after each one.
       Hint: Implement the n-gram model and apply smoothing techniques as learned in the `lfllm-lfnextword` drill.
 - [x] **3. Create a text generation function to suggest response continuations.**  
       Hint: Develop a function that uses your n-gram model to predict and suggest the most probable next words or phrases.
-- [ ] **4. Build a command-line interface for agents to get suggestions.**  
+- [x] **4. Build a command-line interface for agents to get suggestions.**  
       Hint: Design a user-friendly command-line interface to take agent input and display the generated suggestions.
 
 ## Run it
