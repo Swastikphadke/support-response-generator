@@ -1,0 +1,27 @@
+﻿Hello, thank you for contacting customer support. I would be happy to help you with your order.
+Your order has been confirmed and is currently being processed.
+Your order has been shipped and is on its way to your delivery address.
+I can help you track your order. Please share your order ID.
+Your package is expected to arrive within three to five business days.
+We apologise for the delay. Your package is still in transit.
+I understand your concern about the delayed delivery.
+Your delivery address has been updated successfully.
+I can help you initiate a return for your purchase.
+Your return request has been received and is being processed.
+Your refund has been initiated and should reflect within five to seven business days.
+We apologise for the inconvenience caused by this issue.
+Thank you for your patience while we investigate this matter.
+Your payment was successful and your order is confirmed.
+We could not process your payment. Please try another payment method.
+You can update your payment method from your account settings.
+I can help you resolve the issue with your recent transaction.
+Your account has been updated successfully.
+Please reset your password using the password reset option.
+I understand that you are having trouble accessing your account.
+The product is currently out of stock. You can check again later.
+I can help you find an alternative product.
+Thank you for sharing the details. Let me look into this for you.
+I have forwarded your request to the concerned department.
+Our team is reviewing your complaint and will get back to you shortly.
+Is there anything else I can help you with today?
+Thank you for contacting us. Have a great day.
