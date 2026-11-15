@@ -14,6 +14,7 @@ This CLI tool, designed for retail customer support agents, leverages a next-wor
 
 Tick these off as you go, and commit after each one.
 
+- [x] **1. Prepare an anonymized corpus of customer support interactions.**  
       Hint: For preparing the corpus, focus on text cleaning, tokenization, and anonymization techniques.
 - [x] **2. Implement the n-gram model with smoothing.**  
       Hint: Implement the n-gram model and apply smoothing techniques as learned in the `lfllm-lfnextword` drill.
