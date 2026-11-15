@@ -137,3 +137,62 @@ class NGramModel:
             suggestions,
             key=lambda item: (-item[1], item[0])
         )[:limit]
+
+def generate_continuation(
+    model: NGramModel,
+    prompt: str,
+    max_tokens: int = 20,
+    min_words: int = 3
+) -> str:
+    """Generate a response continuation from a partial prompt."""
+
+    if max_tokens < 1:
+        raise ValueError("max_tokens must be at least 1")
+
+    if min_words < 0:
+        raise ValueError("min_words cannot be negative")
+
+    tokens = tokenize(prompt)
+    if not tokens:
+        return ""
+
+    generated = []
+    word_count = 0
+    sentence_endings = {".", "!", "?"}
+
+    for _ in range(max_tokens):
+        context = (
+            tuple(tokens[-(model.n - 1):])
+            if model.n > 1 else ()
+        )
+
+        # Stop if the model has never seen this context.
+        if model.context_counts[context] == 0:
+            break
+
+        suggestions = model.suggest_next(context, limit=len(model.vocabulary))
+
+        if word_count < min_words:
+            suggestions = [
+                item for item in suggestions
+                if item[0] not in sentence_endings
+                and re.fullmatch(r"[a-z]+(?:'[a-z]+)?|[0-9]+", item[0])
+            ]
+
+        if not suggestions:
+            break
+
+        next_token = suggestions[0][0]
+        generated.append(next_token)
+        tokens.append(next_token)
+
+        if next_token in sentence_endings:
+            break
+
+        if re.fullmatch(r"[a-z]+(?:'[a-z]+)?|[0-9]+", next_token):
+            word_count += 1
+
+    continuation = " ".join(generated)
+    continuation = re.sub(r"\s+([,.!?;:])", r"\1", continuation)
+
+    return continuation
